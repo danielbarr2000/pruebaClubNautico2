@@ -1,0 +1,30 @@
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="display-4">Lista de Socios</h1>
+        <p class="lead">Aqui se muestra una lista de los socios registrados en nuestro club náutico.</p>
+    </div>
+</section>
+
+<table>
+    <thead>
+        <tr>
+            <th>Identificador</th>
+            <th>Nombre</th>
+            <th>Telefono</th>
+            <th>Barco</th>
+            <th>Editar</th>
+            <th>Borrar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let articulo of articulos">
+            <td>{{articulo.idSocio}}</td>
+            <td>{{articulo.nombre}}</td>
+            <td>{{articulo.telefono}}</td>
+            <td><button class="btn btn-primary"><a class="link" [routerLink]="['/formbarco',articulo.idSocio]">Registrar</a></button></td>
+            <td><button class="btn btn-success"><a class="link">Editar</a></button></td>
+            <td><button class="btn btn-danger"><a class="link" (click)="borrar(articulo.idSocio)">Borrar</a></button></td>
+        </tr>
+    </tbody>
+</table>
+

@@ -5,6 +5,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { SocioComponent } from './socio/socio/socio.component';
 import { BarcoComponent } from './barco/barco/barco.component';
 import { SalidaComponent } from './salida/salida/salida.component';
+import { LandingComponent } from './landing/landing.component';
 
 import { FormularioSocioComponent } from './formulario-socio/formulario-socio/formulario-socio.component';
 import { FormularioBarcoComponent } from './formulario-barco/formulario-barco/formulario-barco.component';
@@ -13,7 +14,7 @@ import { FormularioSalidaComponent } from './formulario-salida/formulario-salida
 const routes: Routes = [
   {
     path: '',
-    component:InicioComponent
+    component:LandingComponent
   },
   {
     path:'socios',
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'formsalida/:barco',
     component:FormularioSalidaComponent
+  },
+  {
+    path: 'inicio',
+        component:InicioComponent
   }
 ];
 

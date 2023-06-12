@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BarcoComponent } from './barco/barco.component';
+import { ButtonModule } from 'primeng/button';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '../app-routing.module';
@@ -13,6 +14,7 @@ import { AppRoutingModule } from '../app-routing.module';
     CommonModule,
     AppRoutingModule,
     HttpClientModule,
+    ButtonModule
   ],
   exports:[BarcoComponent],
 })

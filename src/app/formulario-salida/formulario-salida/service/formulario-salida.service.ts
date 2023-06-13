@@ -13,15 +13,14 @@ export class FormularioSalidaService {
   postId:any=null;
 
   constructor(private http: HttpClient) { }
-  setPropiedades(id:String,fecha:String,destino:any,patron:any,barco:any){
-    this.id=id;
+  setPropiedades(fecha:String,destino:any,patron:any,barco:any){
     this.fecha=fecha;
     this.destino=destino;
     this.patron=patron;
     this.barco=barco;
   }
   enviar() {
-    return this.http.post<any>("http://localhost:8082/barcos/post",{"fecha":this.fecha, "destino":this.destino, "patron":this.patron, "barco":this.barco}).subscribe(data => {
+    return this.http.post<any>("http://localhost:8082/salidas/post",{"fecha":this.fecha, "destino":this.destino, "nombre_patron":this.patron, "matricula_barco":this.barco}).subscribe(data => {
       this.postId = data.id;
   });
   }

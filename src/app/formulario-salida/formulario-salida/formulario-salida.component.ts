@@ -9,7 +9,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FormularioSalidaComponent implements OnInit {
 
-  id:String="";
   fecha:String="";
   destino:any=null;
   patron:any=null;
@@ -25,7 +24,7 @@ export class FormularioSalidaComponent implements OnInit {
   }
 
   enviar() {
-    this.formService.setPropiedades(this.id,this.fecha,this.destino,this.patron,this.barco);
+    this.formService.setPropiedades(this.fecha,this.destino,this.patron,this.barco);
     this.formService.enviar();
     setTimeout(() => {
       console.log('sleep');

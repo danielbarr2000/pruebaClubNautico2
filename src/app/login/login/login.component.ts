@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 import { LoginService } from './service/login.service';
 import { Router } from '@angular/router';
+import { Message, MessageService } from 'primeng/api';
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
+    providers: [MessageService],
     styles: [`
         :host ::ng-deep .pi-eye,
         :host ::ng-deep .pi-eye-slash {
@@ -23,16 +25,25 @@ export class LoginComponent {
     clave2!: string;
     telefono!: string;
 
-    constructor(public layoutService: LayoutService, private loginService: LoginService, private router: Router) { }
+    msgs: Message[] = [];
+
+    constructor(public layoutService: LayoutService, private loginService: LoginService, private router: Router, private service: MessageService) { }
 
     registrar() {
-        if (this.clave == this.clave2) {
-            console.log("Registrado correctamente");
-            localStorage.setItem('nombre', this.nombre);
-
-            this.enviar();
+        if (this.nombre && this.clave && this.clave2 && this.telefono) {
+            if (this.clave.length >= 5) {
+                if (this.clave == this.clave2) {
+                    console.log("Registrado correctamente");
+                    localStorage.setItem('nombre', this.nombre);
+                    this.enviar();
+                } else {
+                    this.errorClavesNoCoinciden();
+                }
+            } else {
+                this.errorClaveNoSegura
+            }
         } else {
-            console.log("Las claves no coinciden");
+            this.errorCamposIncompletos();
         }
     }
 
@@ -46,5 +57,15 @@ export class LoginComponent {
             console.log('sleep');
             this.router.navigate(['/']);
         }, 1000);
+    }
+
+    errorClavesNoCoinciden() {
+        this.service.add({ key: 'tst', severity: 'error', summary: 'Error', detail: 'Las claves no coinciden' });
+    }
+    errorCamposIncompletos() {
+        this.service.add({ key: 'tst', severity: 'error', summary: 'Error', detail: 'Debes rellenar todos los campos' });
+    }
+    errorClaveNoSegura() {
+        this.service.add({ key: 'tst', severity: 'error', summary: 'Error', detail: 'La clave debe tener por lo menos 5 caracteres' });
     }
 }

@@ -7,6 +7,9 @@ import { PasswordModule } from 'primeng/password';
 import { InputTextModule } from 'primeng/inputtext';
 import { SigninComponent } from './signin/signin.component';
 import { SigninRoutingComponent } from './signin/signin-routing.module';
+import { ToastModule } from 'primeng/toast';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -18,7 +21,10 @@ import { SigninRoutingComponent } from './signin/signin-routing.module';
     CheckboxModule,
     InputTextModule,
     FormsModule,
-    PasswordModule
+    PasswordModule,
+    ToastModule,
+    BrowserAnimationsModule,
+    BrowserModule
   ],
   declarations: [SigninComponent]
 })

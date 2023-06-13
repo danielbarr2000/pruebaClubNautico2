@@ -40,7 +40,7 @@ export class LoginComponent {
                     this.errorClavesNoCoinciden();
                 }
             } else {
-                this.errorClaveNoSegura
+                this.errorClaveNoSegura();
             }
         } else {
             this.errorCamposIncompletos();

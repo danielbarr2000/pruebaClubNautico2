@@ -16,6 +16,10 @@ import { LandingModule } from './landing/landing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormularioBarcoComponent } from './formulario-barco/formulario-barco/formulario-barco.component';
 import { FormularioSalidaComponent } from './formulario-salida/formulario-salida/formulario-salida.component';
+import { CookieService } from 'ngx-cookie-service';
+import { SigninModule } from './signin/signin.module';
+import { LoginModule } from './login/login.module';
+
 
 
 @NgModule({
@@ -35,9 +39,11 @@ import { FormularioSalidaComponent } from './formulario-salida/formulario-salida
     HttpClientModule,
     NgbModule,
     FormsModule,
-    LandingModule
+    LandingModule,
+    SigninModule,
+    LoginModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,40 +10,50 @@ import { LandingComponent } from './landing/landing.component';
 import { FormularioSocioComponent } from './formulario-socio/formulario-socio/formulario-socio.component';
 import { FormularioBarcoComponent } from './formulario-barco/formulario-barco/formulario-barco.component';
 import { FormularioSalidaComponent } from './formulario-salida/formulario-salida/formulario-salida.component';
+import { SigninComponent } from './signin/signin/signin.component';
+import { LoginComponent } from './login/login/login.component';
 
 const routes: Routes = [
   {
     path: '',
-    component:LandingComponent
+    component: LandingComponent
   },
   {
-    path:'socios',
-    component:SocioComponent
+    path: 'socios',
+    component: SocioComponent
   },
   {
-    path:'barcos',
-    component:BarcoComponent
+    path: 'barcos',
+    component: BarcoComponent
   },
   {
-    path:'salidas',
-    component:SalidaComponent
+    path: 'salidas',
+    component: SalidaComponent
   },
   {
     path: 'formsocio',
-    component:FormularioSocioComponent
+    component: FormularioSocioComponent
   },
   {
     path: 'formbarco/:socio',
-    component:FormularioBarcoComponent
+    component: FormularioBarcoComponent
   },
   {
     path: 'formsalida/:barco',
-    component:FormularioSalidaComponent
+    component: FormularioSalidaComponent
   },
   {
     path: 'inicio',
-        component:InicioComponent
-  }
+    component: InicioComponent
+  },
+  {
+    path: 'signin',
+    component: SigninComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
 ];
 
 @NgModule({

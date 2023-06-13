@@ -19,7 +19,7 @@ import { GalleriaModule } from 'primeng/galleria';
         ChartModule,
         PanelModule,
         ButtonModule,
-        GalleriaModule
+        GalleriaModule,
     ],
     declarations: [LandingComponent]
 })

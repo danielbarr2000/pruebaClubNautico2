@@ -1,0 +1,27 @@
+<div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+    <div class="flex flex-column align-items-center justify-content-center">
+        <div style="border-radius:56px; padding:0.3rem; background: linear-gradient(180deg, var(--primary-color) 10%, rgba(33, 150, 243, 0) 30%);">
+            <div class="w-full surface-card py-8 px-5 sm:px-8" style="border-radius:53px">
+                <div class="text-center mb-5">
+                    <img src="assets/layout/images/Logo.png" alt="Image" height="50" class="mb-3">
+                </div>
+
+                <div>
+                    <label for="usuario" class="block text-900 text-xl font-medium mb-2">Nombre de usuario</label>
+                    <input type="text" id="usuario" [(ngModel)]="nombre"  placeholder="Usuario" pInputText class="w-full md:w-30rem mb-5" style="padding:1rem" required>
+
+                    <label for="telefono" class="block text-900 font-medium text-xl mb-2">Numero de telefono</label>
+                    <input type="text" id="telefono" [(ngModel)]="telefono" placeholder="Telefono" pInputText class="w-full mb-5" style="padding:1rem" required>
+
+                    <label for="clave" class="block text-900 font-medium text-xl mb-2">Clave de acceso</label>
+                    <input type="password" id="clave" [(ngModel)]="clave" placeholder="Clave" pInputText class="w-full mb-5" style="padding:1rem" required>
+
+                    <label for="clave2" class="block text-900 font-medium text-xl mb-2">Confirmar clave</label>
+                    <input type="password" id="clave2" [(ngModel)]="clave2" placeholder="Clave" pInputText class="w-full mb-5" style="padding:1rem" required>
+
+                    <button pButton pRipple label="Sign In" class="w-full p-3 text-xl" (click)="registrar()" [routerLink]="['/']"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

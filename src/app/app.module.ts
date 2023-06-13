@@ -19,6 +19,7 @@ import { FormularioSalidaComponent } from './formulario-salida/formulario-salida
 import { CookieService } from 'ngx-cookie-service';
 import { SigninModule } from './signin/signin.module';
 import { LoginModule } from './login/login.module';
+import { BarcosModule } from './barcos/barcos.module';
 
 
 
@@ -41,7 +42,8 @@ import { LoginModule } from './login/login.module';
     FormsModule,
     LandingModule,
     SigninModule,
-    LoginModule
+    LoginModule,
+    BarcosModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

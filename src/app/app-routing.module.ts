@@ -2,9 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { InicioComponent } from './inicio/inicio.component';
-import { SocioComponent } from './socio/socio/socio.component';
-import { BarcoComponent } from './barco/barco/barco.component';
-import { SalidaComponent } from './salida/salida/salida.component';
 import { LandingComponent } from './landing/landing.component';
 
 import { FormularioSocioComponent } from './formulario-socio/formulario-socio/formulario-socio.component';
@@ -12,24 +9,25 @@ import { FormularioBarcoComponent } from './formulario-barco/formulario-barco/fo
 import { FormularioSalidaComponent } from './formulario-salida/formulario-salida/formulario-salida.component';
 import { SigninComponent } from './signin/signin/signin.component';
 import { LoginComponent } from './login/login/login.component';
+import { BarcosComponent } from './barcos/barcos/barcos.component';
 
 const routes: Routes = [
   {
     path: '',
     component: LandingComponent
   },
-  {
-    path: 'socios',
-    component: SocioComponent
-  },
-  {
-    path: 'barcos',
-    component: BarcoComponent
-  },
-  {
-    path: 'salidas',
-    component: SalidaComponent
-  },
+  // {
+  //   path: 'socios',
+  //   component: SocioComponent
+  // },
+  // {
+  //   path: 'barcos',
+  //   component: BarcoComponent
+  // },
+  // {
+  //   path: 'salidas',
+  //   component: SalidaComponent
+  // },
   {
     path: 'formsocio',
     component: FormularioSocioComponent
@@ -54,6 +52,10 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
+  {
+    path: "barcos",
+    component: BarcosComponent
+  }
 ];
 
 @NgModule({

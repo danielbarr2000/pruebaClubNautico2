@@ -12,7 +12,6 @@ import { ZonasociosModule } from './zonasocios/zonasocios.module';
 import { ContactoModule } from './contacto/contacto.module';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CookieService } from 'ngx-cookie-service';
 import { SigninModule } from './signin/signin.module';
 import { LoginModule } from './login/login.module';
 import { BarcosModule } from './barcos/barcos.module';
@@ -42,7 +41,7 @@ import { RegistrosalidaModule } from './registrosalida/registrosalida.module';
     ContactoModule,
     RegistrosalidaModule
   ],
-  providers: [CookieService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -15,19 +15,19 @@
                 <ul
                     class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer">
                     <li>
-                        <a (click)="router.navigate(['/'])" pRipple
+                        <a (click)="router.navigate(['/'], {fragment: 'home'})" pRipple
                             class="flex m-0 md:ml-5 px-0 py-3 hover:text-blue-500 text-2xl text-900 font-medium line-height-3">
                             <span>Inicio</span>
                         </a>
                     </li>
                     <li *ngIf="nombre==null">
-                        <a
+                        <a (click)="router.navigate(['/zonasocios'], {fragment: 'features'})" pRipple
                             class="flex m-0 md:ml-5 px-0 py-3 hover:text-blue-500 text-2xl text-900 font-medium line-height-3">
                             <span>Zona Socios</span>
                         </a>
                     </li>
                     <li>
-                        <a (click)="router.navigate(['/contacto'])" pRipple
+                        <a (click)="router.navigate(['/landing'], {fragment: 'highlights'})" pRipple
                             class="flex m-0 md:ml-5 px-0 py-3 hover:text-blue-500 text-2xl text-900 font-medium line-height-3">
                             <span>Contacto</span>
                         </a>
@@ -52,79 +52,34 @@
         </div>
 
         <div id="hero" class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden"
-            style="background: linear-gradient(0deg, rgba(78, 202, 224, 0.2), rgba(23, 63, 173, 0.2)), radial-gradient(77.36% 256.97% at 77.36% 57.52%, hsl(272, 63%, 69%) 0%, #7937af 100%); clip-path: ellipse(150% 87% at 93% 13%);">
+            style="background: linear-gradient(0deg, rgba(78, 202, 224, 0.2), rgba(23, 63, 173, 0.2)), radial-gradient(77.36% 256.97% at 77.36% 57.52%, rgb(69, 233, 170) 0%, #3ACDE7 100%); clip-path: ellipse(150% 87% at 93% 13%);">
             <div class="mx-4 md:mx-8 mt-0 md:mt-4">
-                <h1 class="text-6xl font-bold text-white line-height-2">Bienvenido a la zona de Socios!</h1>
-                <p class="font-normal text-2xl line-height-3 md:mt-3 text-white">En esta sección podrás descubrir todas las ventajas que tendrás por ser socio en Bahía Mar</p>
-                <button pButton pRipple type="button" label="Descubre las experiencias"
+                <h1 class="text-6xl font-bold text-white line-height-2">Página de Contacto</h1>
+                <p class="font-normal text-2xl line-height-3 md:mt-3 text-white">Aquí podrás encontrar todas las formas que tienes para contactar con nosotros</p>
+                <button pButton pRipple type="button" label="Contáctanos"
                     class="p-button-rounded text-xl border-none mt-3 bg-blue-500 font-normal line-height-3 px-3 text-white"></button>
             </div>
             <div class="flex justify-content-center md:justify-content-end">
-                <img src="assets/layout/images/Socios.png" alt="Hero Image" class="w-9 md:w-auto">
+                <img src="assets/layout/images/Contacto.png" alt="Hero Image" class="w-10 md:w-6">
             </div>
         </div><br><br>
 
         <div id="highlights" class="py-4 px-4 lg:px-8 mx-0 my-6 lg:mx-8">
-            <div class="text-center">
-                <h2 class="text-900 font-normal mb-2">Conoce las ventajas</h2>
-                <span class="text-600 text-2xl">De formar parte de esta familia</span>
-            </div>
 
-            <div class="grid mt-8 pb-2 md:pb-8">
-                <div class="flex justify-content-center col-12 lg:col-6 bg-cyan-200 p-0 flex-order-1 lg:flex-order-0"
-                    style="border-radius:8px; background:linear-gradient(0deg, #fbedb1, rgb(46, 153, 224));">
-                    <img src="assets/layout/images/Playa.png" class="w-12" alt="mockup mobile">
-                </div>
-
-                <div class="col-12 lg:col-6 my-auto flex flex-column lg:align-items-end text-center lg:text-right">
-                    <div class="flex align-items-center justify-content-center bg-yellow-200 align-self-center lg:align-self-end"
-                        style="width:4.2rem; height:4.2rem; border-radius: 10px;">
-                        <i class="pi pi-fw pi-sun text-5xl text-yellow-700"></i>
+            <div class="grid my-8 pt-2 md:pt-8">
+                <div class="col-12 lg:col-6 my-auto flex flex-column text-center lg:text-left lg:align-items-start">
+                    <div class="flex align-items-center justify-content-center bg-purple-200 align-self-center lg:align-self-start"
+                        style="width:4.2rem; height:4.2rem; border-radius:10px;">
+                        <i class="pi pi-fw pi-map text-5xl text-purple-400"></i>
                     </div>
-                    <h2 class="line-height-1 text-900 text-4xl font-normal">¡Conoce las mejores playas!
-                    </h2>
-                    <span class="text-700 text-2xl line-height-3 ml-0 md:ml-2" style="max-width:650px;">En Bahía Mar, podrás disfrutar de las mejores playas
-                    privadas que tenemos reservadas para ti. Podrás nadar en las aguas cristalinas como si estuvieses en el Caribe.</span>
+                    <h2 class="line-height-1 text-900 text-4xl font-normal">Nos encontramos en</h2>
+                    <span class="text-700 text-2xl line-height-3 mr-0 md:mr-2" style="max-width:650px;">Paseo Marítimo Málaga, nº2</span><br>
+                    <span class="text-700 text-2xl line-height-3 mr-0 md:mr-2" style="max-width: 650px;"><i class="pi pi-fw pi-envelope text-2xl text-purple-400"></i>E-mail: bahiamarcontacto@gmail.com</span>
                 </div>
+
+                <div class="flex justify-content-end flex-order-1 sm:flex-order-2 col-12 lg:col-6 p-0">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.7069631639115!2d-4.48999232355264!3d36.63343967708129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72fbe7a91d6b8b%3A0xe38f07c075e6c825!2sP.%C2%BA%20de%20Maritimo%20Torremolinos%2C%20M%C3%A1laga!5e0!3m2!1ses!2ses!4v1686758598086!5m2!1ses!2ses" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                </div>
             </div>
-
-            <div class="grid mt-8 pb-2 md:pb-8">
-                <div class="flex justify-content-center col-12 lg:col-6 bg-cyan-200 p-0 flex-order-1 lg:flex-order-0"
-                    style="border-radius:8px; background:linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), radial-gradient(77.36% 256.97% at 77.36% 10.52%, hwb(189 52% 7%) 0%, #ad3276 100%);">
-                    <img src="assets/layout/images/Vinos.png" class="w-7" alt="mockup mobile">
-                </div>
-
-                <div class="col-12 lg:col-6 my-auto flex flex-column lg:align-items-end text-center lg:text-right">
-                    <div class="flex align-items-center justify-content-center bg-red-400 align-self-center lg:align-self-end"
-                        style="width:4.2rem; height:4.2rem; border-radius: 10px;">
-                        <i class="pi pi-fw pi-heart text-5xl text-red-900"></i>
-                    </div>
-                    <h2 class="line-height-1 text-900 text-4xl font-normal">¡Los mejores cócteles en Bahía Mar!</h2>
-                    <span class="text-700 text-2xl line-height-3 ml-0 md:ml-2" style="max-width:650px;">Tenemos una aplia selección de diferentes cócteles y 
-                    bebidas de todo tipo disponibles para que las puedas consumir en cualquier parte.</span>
-                </div>
-            </div>
-
-            <div class="grid mt-8 pb-2 md:pb-8">
-                <div class="flex justify-content-center col-12 lg:col-6 bg-cyan-200 p-0 flex-order-1 lg:flex-order-0"
-                    style="border-radius:8px; background:linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), radial-gradient(77.36% 256.97% at 77.36% 77.52%, hsl(98, 75%, 65%) 0%, hwb(213 12% 8%) 100%);">
-                    <img src="assets/layout/images/Restaurante.png" class="w-12" alt="mockup mobile">
-                </div>
-
-                <div class="col-12 lg:col-6 my-auto flex flex-column lg:align-items-end text-center lg:text-right">
-                    <div class="flex align-items-center justify-content-center bg-green-200 align-self-center lg:align-self-end"
-                        style="width:4.2rem; height:4.2rem; border-radius: 10px;">
-                        <i class="pi pi-fw pi-building text-5xl text-green-700"></i>
-                    </div>
-                    <h2 class="line-height-1 text-900 text-4xl font-normal">¡Los Restaurantes más gourmet!</h2>
-                    <span class="text-700 text-2xl line-height-3 ml-0 md:ml-2" style="max-width:650px;">Contamos con numerosos restaurantes con recintos
-                    espectaculares, y algunos de ellos con estrellas michelín. ¿A qué esperas para comer?</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex justify-content-center">
-            <button pButton pRipple label="¡Hazte socio aquí!" (click)="router.navigate(['/login'])" class="w-50 text-center p-3 text-xl bg-green-300 hover:bg-green-500" style="border: none;"></button>
         </div>
 
         

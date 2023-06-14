@@ -58,8 +58,8 @@
             </div> -->
         </div><br><br>
 
-        <div class="py-4 px-4 lg:px-8 mt-5 mx-0 lg:mx-8">
-            <table *ngIf="articulos">
+        <div class="flex justify-content-center">
+            <table *ngIf="articulos" style="margin-bottom: 4rem;">
                 <thead>
                   <tr>
                     <th>Matricula</th>
@@ -79,6 +79,31 @@
                     <td>{{articulo.cuota}}€</td>
                     <td><button class="btn btn-primary">Registrar</button></td>
                     <td><button class="btn btn-success" (click)="router.navigate(['/editarbarco'])">Editar</button></td>
+                    <td><button class="btn btn-danger" (click)="borrar(articulo.matricula)">Borrar</button></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table *ngIf="articulos">
+                <thead>
+                  <tr>
+                    <th>Matricula</th>
+                    <th>Nombre</th>
+                    <th>Amarre</th>
+                    <th>Cuota</th>
+                    <!-- <th>Salida</th>
+                    <th>Editar</th> -->
+                    <th>Borrar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let articulo of articulos">
+                    <td>{{articulo.matricula}}</td>
+                    <td>{{articulo.nombre}}</td>
+                    <td>{{articulo.n_amarre}}</td>
+                    <td>{{articulo.cuota}}€</td>
+                    <!-- <td><button class="btn btn-primary">Registrar</button></td>
+                    <td><button class="btn btn-success" (click)="router.navigate(['/editarbarco'])">Editar</button></td> -->
                     <td><button class="btn btn-danger" (click)="borrar(articulo.matricula)">Borrar</button></td>
                   </tr>
                 </tbody>

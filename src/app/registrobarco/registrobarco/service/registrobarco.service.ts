@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,8 @@ export class RegistrobarcoService {
   cuota!: number;
   idSocio!: any;
 
+  baseUrl: string=environment.baseUrl;
+
   constructor(private http: HttpClient) { }
 
   setPropiedades(matricula: string, nombre: string, nAmarre: number, cuota: number, idSocio: any) {
@@ -23,7 +26,7 @@ export class RegistrobarcoService {
   }
 
   enviar() {
-    this.http.post<any>("http://localhost:8082/barcos/post", { "matricula": this.matricula, "nombre": this.nombre, "n_amarre": this.nAmarre, "cuota": this.cuota, "idSocio": this.idSocio }).subscribe(data => {
+    this.http.post<any>(this.baseUrl+"barcos/post", { "matricula": this.matricula, "nombre": this.nombre, "n_amarre": this.nAmarre, "cuota": this.cuota, "idSocio": this.idSocio }).subscribe(data => {
     });
   }
 }

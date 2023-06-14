@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +13,12 @@ export class RegistrosalidaService {
   patron!: string;
   matricula!: string;
 
+  baseUrl: string=environment.baseUrl;
+
   constructor(private http: HttpClient, public router: Router) { }
 
   recibirDatos(matricula: any): Observable<any> {
-    return this.http.get<any>("http://localhost:8082/barcos/get/" + matricula);
+    return this.http.get<any>(this.baseUrl+"barcos/get/" + matricula);
   }
 
   setPropiedades(fecha: string, destino: string, patron: string, matricula: string) {
@@ -26,7 +29,7 @@ export class RegistrosalidaService {
   }
 
   enviarDatos(){
-    this.http.post<any>("http://localhost:8082/salidas/post", { "fecha": this.fecha, "destino": this.destino, "nombre_patron": this.patron, "matricula_barco": this.matricula}).subscribe(data => {
+    this.http.post<any>(this.baseUrl+"salidas/post", { "fecha": this.fecha, "destino": this.destino, "nombre_patron": this.patron, "matricula_barco": this.matricula}).subscribe(data => {
     });
 
     setTimeout(() => {

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,8 @@ export class LoginService {
   telefono: string = "";
   clave: string = "";
   postId: any;
+
+  baseUrl: string=environment.baseUrl;
 
   constructor(private http: HttpClient) { }
 
@@ -25,8 +28,8 @@ export class LoginService {
   }
 
   enviar() {
-    this.http.post<any>("http://localhost:8082/socios/post", { "id": this.id, "nombre": this.nombre, "telefono": this.telefono, "clave": this.clave }).subscribe(data => {
-      this.http.get<any>("http://localhost:8082/socios/get/nombre/" + this.nombre).subscribe(data => {
+    this.http.post<any>(this.baseUrl+"socios/post", { "id": this.id, "nombre": this.nombre, "telefono": this.telefono, "clave": this.clave }).subscribe(data => {
+      this.http.get<any>(this.baseUrl+"socios/get/nombre/" + this.nombre).subscribe(data => {
         localStorage.setItem('nombre', data.nombre);
         localStorage.setItem('id', data.idSocio);
       });

@@ -7,19 +7,37 @@
                 </div>
                 <p-toast key="tst"></p-toast>
                 <div>
-                    <label for="usuario" class="block text-900 text-xl font-medium mb-2">Nombre de usuario</label>
-                    <input type="text" id="usuario" [(ngModel)]="nombre"  placeholder="Usuario" pInputText class="w-full md:w-30rem mb-5" style="padding:1rem">
+                    <div class="pb-5">
+                        <span class="p-float-label text-xl">
+                            <input type="text" id="usuario" [(ngModel)]="nombre" pInputText class="w-full md:w-30rem" style="padding:1rem">
+                            <label for="usuario">Nombre de usuario</label>
+                        </span>
+                    </div>
 
-                    <label for="telefono" class="block text-900 font-medium text-xl mb-2">Numero de telefono</label>
-                    <input type="text" id="telefono" [(ngModel)]="telefono" placeholder="Telefono" pInputText class="w-full mb-5" style="padding:1rem">
+                    <div class="pb-5">
+                        <span class="p-float-label text-xl">
+                            <input type="text" id="telefono" [(ngModel)]="telefono" pInputText class="w-full md:w-30rem" style="padding:1rem">
+                            <label for="telefono">Numero de telefono</label>
+                        </span>
+                    </div>
 
-                    <label for="clave" class="block text-900 font-medium text-xl mb-2">Clave de acceso</label>
-                    <input type="password" id="clave" [(ngModel)]="clave" placeholder="Clave" pInputText class="w-full mb-5" style="padding:1rem">
+                    <div class="pb-5">
+                        <span class="p-float-label text-xl">
+                            <input type="password" id="clave" [(ngModel)]="clave" pInputText class="w-full md:w-30rem" style="padding:1rem">
+                            <label for="clave">Contraseña</label>
+                        </span>
+                    </div>
 
-                    <label for="clave2" class="block text-900 font-medium text-xl mb-2">Confirmar clave</label>
-                    <input type="password" id="clave2" [(ngModel)]="clave2" placeholder="Clave" pInputText class="w-full mb-5" style="padding:1rem">
+                    <div class="pb-5">
+                        <span class="p-float-label text-xl">
+                            <input type="password" id="clave2" [(ngModel)]="clave2" pInputText class="w-full md:w-30rem" style="padding:1rem">
+                            <label for="clave2">Confirmar Contraseña</label>
+                        </span>
+                    </div>
 
-                    <button pButton pRipple label="Sign In" class="w-full p-3 text-xl" (click)="registrar()"></button>
+                    <button pButton pRipple label="Sign In" class="w-full p-3 text-xl" (click)="registrar()"></button><br><br>
+
+                    <button pButton pRipple label="Volver" (click)="router.navigate(['/'])" class="w-full p-3 text-xl bg-bluegray-200" style="border: none;"></button>
                 </div>
             </div>
         </div>

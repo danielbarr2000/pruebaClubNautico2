@@ -3,12 +3,11 @@ import { Router } from '@angular/router';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
 @Component({
-    selector: 'app-zonaSocios',
-    templateUrl: './landing.component.html'
+  selector: 'app-zonasocios',
+  templateUrl: './zonasocios.component.html',
 })
-export class LandingComponent implements OnInit {
-
-    nombre!:any;
+export class ZonasociosComponent implements OnInit {
+  nombre!:any;
 
     constructor(public layoutService: LayoutService, public router: Router) { }
 

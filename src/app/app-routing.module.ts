@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { InicioComponent } from './inicio/inicio.component';
 import { LandingComponent } from './landing/landing.component';
+import { ZonasociosComponent } from './zonasocios/zonasocios/zonasocios.component';
 
 import { FormularioSocioComponent } from './formulario-socio/formulario-socio/formulario-socio.component';
 import { FormularioBarcoComponent } from './formulario-barco/formulario-barco/formulario-barco.component';
@@ -55,6 +56,10 @@ const routes: Routes = [
   {
     path: "barcos",
     component: BarcosComponent
+  },
+  {
+    path: "zonasocios",
+    component: ZonasociosComponent
   }
 ];
 

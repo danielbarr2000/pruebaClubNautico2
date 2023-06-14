@@ -12,6 +12,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { SalidaModule } from './salida/salida.module';
 import { SocioModule } from './socio/socio.module';
 import { LandingModule } from './landing/landing.module';
+import { ZonasociosModule } from './zonasocios/zonasocios.module';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormularioBarcoComponent } from './formulario-barco/formulario-barco/formulario-barco.component';
@@ -43,7 +44,8 @@ import { BarcosModule } from './barcos/barcos.module';
     LandingModule,
     SigninModule,
     LoginModule,
-    BarcosModule
+    BarcosModule,
+    ZonasociosModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

@@ -27,7 +27,7 @@ export class LoginComponent {
 
     msgs: Message[] = [];
 
-    constructor(public layoutService: LayoutService, private loginService: LoginService, private router: Router, private service: MessageService) { }
+    constructor(public layoutService: LayoutService, private loginService: LoginService, public router: Router, private service: MessageService) { }
 
     registrar() {
         if (this.nombre && this.clave && this.clave2 && this.telefono) {

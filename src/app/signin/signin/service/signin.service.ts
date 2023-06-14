@@ -27,11 +27,10 @@ export class SigninService {
       if (data == true) {
         localStorage.setItem('nombre', this.nombre);
         setTimeout(() => {
-          console.log('sleep');
           this.router.navigate(['/']);
         }, 1000);
       } else {
-        console.log("Datos de inicio incorrectos");
+        alert('Inicio de sesión incorrecto');
       }
     });
   }

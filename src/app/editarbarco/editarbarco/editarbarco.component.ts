@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 import { EditarbarcoService } from './service/editarbarco.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Message, MessageService } from 'primeng/api';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-editarbarco',
@@ -20,25 +21,31 @@ import { Message, MessageService } from 'primeng/api';
 export class EditarbarcoComponent implements OnInit {
   msgs: Message[] = [];
 
-  matricula!: string;
+  barco!: any;
+
+  matricula!: any;
   nombre!: string;
   nAmarre!: number;
   cuota!: number;
   idSocio = localStorage.getItem("id");
 
-  constructor(public layoutService: LayoutService, private editarbarcoService: EditarbarcoService, public router: Router, private service: MessageService) { }
+  constructor(public layoutService: LayoutService, private editarbarcoService: EditarbarcoService, public router: Router, private service: MessageService, private activatedRoute: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit(): void {
-    
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.editarbarcoService.recibirDatos(params.get('matricula')).subscribe(data => {
+        this.barco = data;
+      });
+    });
   }
 
-  // enviar() {
-  //   this.editarbarcoService.setPropiedades(this.matricula, this.nombre, this.nAmarre, this.cuota, this.idSocio);
-  //   this.editarbarcoService.enviar();
+  enviarDatos() {
+    this.editarbarcoService.setPropiedades(this.barco.matricula, this.barco.nombre, this.barco.n_amarre, this.barco.cuota, this.idSocio);
+    this.editarbarcoService.enviarDatos(this.barco.matricula);
 
-  //   setTimeout(() => {
-  //     console.log('sleep');
-  //     this.router.navigate(['barcos']);
-  //   }, 1000);
-  // }
+    setTimeout(() => {
+      console.log('sleep');
+      this.router.navigate(['/barcos']);
+    }, 1000);
+  }
 }

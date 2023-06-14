@@ -9,28 +9,28 @@
                 <div>
                     <div class="pb-5">
                         <span class="p-float-label text-xl">
-                            <input type="text" id="matricula" [(ngModel)]="matricula" pInputText class="w-full md:w-30rem" style="padding:1rem">
+                            <input type="text" id="matricula" [(ngModel)]="barco.matricula" pInputText class="w-full md:w-30rem" style="padding:1rem">
                             <label for="matricula">Matricula del barco</label>
                         </span>
                     </div>
 
                     <div class="pb-5">
                         <span class="p-float-label text-xl">
-                            <input type="text" id="nombre" [(ngModel)]="nombre" pInputText class="w-full md:w-30rem" style="padding:1rem">
+                            <input type="text" id="nombre" [(ngModel)]="barco.nombre" pInputText class="w-full md:w-30rem" style="padding:1rem">
                             <label for="nombre">Nombre del barco</label>
                         </span>
                     </div>
 
                     <div class="pb-5">
                         <span class="p-float-label text-xl">
-                            <input type="nAmarre" id="nAmarre" [(ngModel)]="nAmarre" pInputText class="w-full md:w-30rem" style="padding:1rem">
+                            <input type="nAmarre" id="nAmarre" [(ngModel)]="barco.n_amarre" pInputText class="w-full md:w-30rem" style="padding:1rem">
                             <label for="nAmarre">Numero del amarre</label>
                         </span>
                     </div>
 
                     <div class="pb-5">
                         <span class="p-float-label text-xl">
-                            <input type="cuota" id="cuota" [(ngModel)]="cuota" pInputText class="w-full md:w-30rem" style="padding:1rem">
+                            <input type="cuota" id="cuota" [(ngModel)]="barco.cuota" pInputText class="w-full md:w-30rem" style="padding:1rem">
                             <label for="cuota">Cuota mensual a pagar</label>
                         </span>
                     </div>
@@ -42,11 +42,13 @@
                         </span>
                     </div>
 
-                    <button pButton pRipple label="Matricular" class="w-full p-3 text-xl"></button><br><br>
+                    <button pButton pRipple label="Guardar cambios" (click)="enviarDatos()" class="w-full p-3 text-xl"></button><br><br>
 
                     <button pButton pRipple label="Volver" (click)="router.navigate(['/barcos'])" class="w-full p-3 text-xl bg-bluegray-200" style="border: none;"></button>
+                    
                 </div>
             </div>
         </div>
     </div>
 </div>
+

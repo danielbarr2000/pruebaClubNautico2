@@ -45,7 +45,7 @@
             </div>
         </div>
 
-        <div class="py-4 px-4 lg:px-8 mt-5 mx-0 lg:mx-8">
+        <div class="py-4 px-4 lg:px-8 mt-5 mx-0 lg:mx-8 text-center" style="text-align: center; margin: 0 auto;">
             <table>
                 <thead>
                   <tr>
@@ -64,10 +64,10 @@
                     <td>{{articulo.nombre}}</td>
                     <td>{{articulo.n_amarre}}</td>
                     <td>{{articulo.cuota}}€</td>
-                    <td><button class="btn btn-primary"><a class="link"
+                    <td><button class="btn btn-primary"><a class="link" style="text-decoration: none; color: white;"
                           [routerLink]="['/formsalida',articulo.matricula]">Registrar</a></button></td>
-                    <td><button class="btn btn-success"><a class="link">Editar</a></button></td>
-                    <td><button class="btn btn-danger" (click)="borrar(articulo.matricula)"><a class="link">Borrar</a></button></td>
+                    <td><button class="btn btn-success"><a class="link" style="text-decoration: none; color: white;">Editar</a></button></td>
+                    <td><button class="btn btn-danger" (click)="borrar(articulo.matricula)"><a class="link" style="text-decoration: none; color: white;">Borrar</a></button></td>
                   </tr>
                 </tbody>
               </table>

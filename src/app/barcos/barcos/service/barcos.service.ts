@@ -9,7 +9,7 @@ export class BarcosService {
   constructor(private http: HttpClient) { }
 
   acceder() {
-    return this.http.get("http://localhost:8082/barcos/get/user/"+localStorage.getItem("id"));
+    return this.http.get("http://localhost:8082/barcos/get");
   }
 
   borrar(id:String){

@@ -1,104 +1,104 @@
 <style>
-    .navbar {
-      background: linear-gradient(to right, #00d2ff, #3a7bd5);
-      box-shadow: 0px 0px 10px #999;
-    }
-  
-    .nav-link {
-      color: #fff !important;
-      font-weight: bold;
-      font-size: 18px;
-      padding: 12px 20px;
-      transition: all 0.3s ease-in-out;
-      position: relative;
-      z-index: 1;
-      text-shadow: 1px 1px #333;
-    }
-  
-    .nav-link::before {
-      content: "";
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 0%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.3);
-      z-index: -1;
-      transition: all 0.3s ease-in-out;
-    }
-  
-    .nav-link:hover::before {
-      width: 100%;
-    }
-  
-    .nav-link:hover {
-      color: #ffc107 !important;
-      text-shadow: 2px 2px #333;
-    }
-  
-    .nav-link.active::before {
-      width: 100%;
-    }
-  
-    .logo {
-      font-size: 2rem;
-      font-weight: 700;
-      color: white;
-    }
-  </style>
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <p class="logo"><a style="color: white;" routerLink="/">Bahía Mar</a></p>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon">Menu</span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/socios">Socios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/barcos">Barcos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/salidas">Salidas</a>
-          </li>
-        </ul>
-      </div>
+  .navbar {
+    background: linear-gradient(to right, #00d2ff, #3a7bd5);
+    box-shadow: 0px 0px 10px #999;
+  }
+
+  .nav-link {
+    color: #fff !important;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 12px 20px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px #333;
+  }
+
+  .nav-link::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-link:hover::before {
+    width: 100%;
+  }
+
+  .nav-link:hover {
+    color: #ffc107 !important;
+    text-shadow: 2px 2px #333;
+  }
+
+  .nav-link.active::before {
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+  }
+</style>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <p class="logo"><a style="color: white;" routerLink="/">Bahía Mar</a></p>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">Menu</span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/socios">Socios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/barcos">Barcos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/salidas">Salidas</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 <section class="jumbotron text-center">
-    <div class="container">
-        <h1 class="display-4">Lista de Barcos</h1>
-        <p class="lead">Aqui se muestra una lista de los barcos registrados en nuestro club náutico.</p>
-    </div>
+  <div class="container">
+    <h1 class="display-4">Lista de Barcos</h1>
+    <p class="lead">Aqui se muestra una lista de los barcos registrados en nuestro club náutico.</p>
+  </div>
 </section>
 <table>
-    <thead>
-        <tr>
-            <th>Matricula</th>
-            <th>Nombre</th>
-            <th>Amarre</th>
-            <th>Cuota</th>
-            <th>Id del dueño</th>
-            <th>Salida</th>
-            <th>Editar</th>
-            <th>Borrar</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let articulo of articulos">
-            <td>{{articulo.matricula}}</td>
-            <td>{{articulo.nombre}}</td>
-            <td>{{articulo.n_amarre}}</td>
-            <td>{{articulo.cuota}}€</td>
-            <td>{{articulo.socio}}</td>
-            <td><button class="btn btn-primary"><a class="link" [routerLink]="['/formsalida',articulo.matricula]">Registrar</a></button></td>
-            <td><button class="btn btn-success"><a class="link">Editar</a></button></td>
-            <td><button class="btn btn-danger" (click)="borrar(articulo.matricula)"><a class="link">Borrar</a></button></td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th>Matricula</th>
+      <th>Nombre</th>
+      <th>Amarre</th>
+      <th>Cuota</th>
+      <th>Id del dueño</th>
+      <th>Salida</th>
+      <th>Editar</th>
+      <th>Borrar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let articulo of articulos">
+      <td>{{articulo.matricula}}</td>
+      <td>{{articulo.nombre}}</td>
+      <td>{{articulo.n_amarre}}</td>
+      <td>{{articulo.cuota}}€</td>
+      <td>{{articulo.socio}}</td>
+      <td><button class="btn btn-primary"><a class="link"
+            [routerLink]="['/formsalida',articulo.matricula]">Registrar</a></button></td>
+      <td><button class="btn btn-success"><a class="link">Editar</a></button></td>
+      <td><button class="btn btn-danger" (click)="borrar(articulo.matricula)"><a class="link">Borrar</a></button></td>
+    </tr>
+  </tbody>
 </table>
-

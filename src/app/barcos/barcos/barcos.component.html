@@ -1,1 +1,126 @@
-<p>barcos works!</p>
+<div class="surface-0">
+    <div id="home" class="landing-wrapper overflow-hidden">
+        <div
+            class="py-4 px-4 mx-0 md:mx-6 lg:mx-8 lg:px-8 flex align-items-center justify-content-between relative lg:static mb-3">
+            <a class="flex align-items-center" href="#">
+                <img src="assets/layout/images/Logo.png" alt="Bahía Mar Logo" height="70" class="mr-0 lg:mr-4"><span
+                    class="text-900 font-medium text-6xl line-height-2 mr-8">BahíaMar</span>
+            </a>
+            <a pRipple class="cursor-pointer block lg:hidden text-700" pStyleClass="@next" enterClass="hidden"
+                leaveToClass="hidden">
+                <i class="pi pi-bars text-4xl"></i>
+            </a>
+            <div class="align-items-center surface-0 flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2"
+                style="top:120px">
+                <ul
+                    class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer">
+                    <li>
+                        <a (click)="router.navigate(['/'], {fragment: 'home'})" pRipple
+                            class="flex m-0 md:ml-5 px-0 py-3 hover:text-blue-500 text-2xl text-900 font-medium line-height-3">
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li *ngIf="nombre==null">
+                        <a (click)="router.navigate(['/zonasocios'], {fragment: 'features'})" pRipple
+                            class="flex m-0 md:ml-5 px-0 py-3 hover:text-blue-500 text-2xl text-900 font-medium line-height-3">
+                            <span>Zona Socios</span>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- Hay que crear la parte de contacto -->
+                        <a (click)="router.navigate(['/contacto'], {fragment: 'highlights'})" pRipple
+                            class="flex m-0 md:ml-5 px-0 py-3 hover:text-blue-500 text-2xl text-900 font-medium line-height-3">
+                            <span>Contacto</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0"
+                    *ngIf="nombre!=null">
+                    <button pButton pRipple label="Hola, {{nombre}}"
+                        class="p-button-text p-button-rounded border-none font-light line-height-2 text-2xl hover:text-cyan-400 text-blue-500"></button>
+                    <button (click)="cerrarSesion()" pButton pRipple label="Cerrar sesion"
+                        class="p-button-rounded border-none ml-5 font-light line-height-1 bg-bluegray-200 text-2xl hover:bg-cyan-400 text-white"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-4 px-4 lg:px-8 mt-5 mx-0 lg:mx-8">
+            <table>
+                <thead>
+                  <tr>
+                    <th>Matricula</th>
+                    <th>Nombre</th>
+                    <th>Amarre</th>
+                    <th>Cuota</th>
+                    <th>Id del dueño</th>
+                    <th>Salida</th>
+                    <th>Editar</th>
+                    <th>Borrar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let articulo of articulos">
+                    <td>{{articulo.matricula}}</td>
+                    <td>{{articulo.nombre}}</td>
+                    <td>{{articulo.n_amarre}}</td>
+                    <td>{{articulo.cuota}}€</td>
+                    <td>{{articulo.socio}}</td>
+                    <td><button class="btn btn-primary"><a class="link"
+                          [routerLink]="['/formsalida',articulo.matricula]">Registrar</a></button></td>
+                    <td><button class="btn btn-success"><a class="link">Editar</a></button></td>
+                    <td><button class="btn btn-danger" (click)="borrar(articulo.matricula)"><a class="link">Borrar</a></button></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+
+        <div class="py-4 px-4 mx-0 mt-8 lg:mx-8">
+            <div class="grid justify-content-between">
+                <div class="col-12 md:col-2" style="margin-top:-1.5rem;">
+                    <a (click)="router.navigate(['/pages/landing'], {fragment: 'home'})"
+                        class="flex flex-wrap align-items-center justify-content-center md:justify-content-start md:mb-0 mb-3 cursor-pointer">
+                        <img src="assets/layout/images/Logo.png" alt="footer sections" width="50" height="50"
+                            class="mr-2">
+                        <h4 class="font-medium text-xl text-900">Club Bahía Mar</h4>
+                    </a>
+                </div>
+
+                <div class="col-12 md:col-10 lg:col-7">
+                    <div class="grid text-center md:text-left">
+                        <div class="col-12 md:col-3">
+                            <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Empresa</h4>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Sobre Nosotros</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Orígenes</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Contacto</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Personal</a>
+                            <a class="line-height-3 text-xl block cursor-pointer text-700">Opiniones</a>
+                        </div>
+
+                        <div class="col-12 md:col-3 mt-4 md:mt-0">
+                            <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Páginas</h4>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Inicio</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Zona Socios</a>
+                            <a class="line-height-3 text-xl block cursor-pointer text-700">Contacto</a>
+                        </div>
+
+                        <div class="col-12 md:col-3 mt-4 md:mt-0">
+                            <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Redes Sociales</h4>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700"><i class="pi pi-fw pi-discord text-4xl text-purple-700"></i>Discord</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700"><i class="pi pi-fw pi-twitter text-4xl text-blue-400"></i>Twitter</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700"><i class="pi pi-fw pi-facebook text-4xl text-blue-600"></i>Facebook</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700"><i class="pi pi-fw pi-instagram text-4xl text-pink-400"></i>Instagram</a>
+                        </div>
+
+                        <div class="col-12 md:col-3 mt-4 md:mt-0">
+                            <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Legal</h4>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Política de Empresa</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Política de Privacidad</a>
+                            <a class="line-height-3 text-xl block cursor-pointer text-700">Términos de Uso</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

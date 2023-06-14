@@ -34,7 +34,8 @@ export class LoginComponent {
             if (this.clave.length >= 5) {
                 if (this.clave == this.clave2) {
                     console.log("Registrado correctamente");
-                    localStorage.setItem('nombre', this.nombre);
+                    // localStorage.setItem('nombre', this.nombre);
+
                     this.enviar();
                 } else {
                     this.errorClavesNoCoinciden();

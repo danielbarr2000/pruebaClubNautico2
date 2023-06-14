@@ -45,6 +45,19 @@
             </div>
         </div>
 
+        <div id="hero" class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden"
+            style="background: linear-gradient(0deg, rgba(78, 202, 224, 0.2), rgba(23, 63, 173, 0.2)), radial-gradient(77.36% 256.97% at 77.36% 57.52%, #506CBA 0%, #1c3782 100%); clip-path: ellipse(150% 87% at 93% 13%);">
+            <div class="mx-4 md:mx-8 mt-0 md:mt-4">
+                <h1 class="text-6xl font-bold text-white line-height-2">Bienvenido a tu embarcadero personal!</h1>
+                <p class="font-normal text-2xl line-height-3 md:mt-3 text-white">En esta sección podrás gestionar tu flota y matricular tus nuevas adquisiciones.</p>
+                <button pButton pRipple type="button" (click)="router.navigate(['/registrobarco'])"
+                    class="p-button-rounded text-xl border-none mt-3 bg-blue-500 font-normal line-height-3 px-3 text-white">Matricular un barco</button>
+            </div><br><br><br><br>
+            <!-- <div class="flex justify-content-center md:justify-content-end">
+                <img src="assets/layout/images/Socios.png" alt="Hero Image" class="w-9 md:w-auto">
+            </div> -->
+        </div><br><br>
+
         <div class="py-4 px-4 lg:px-8 mt-5 mx-0 lg:mx-8">
             <table>
                 <thead>

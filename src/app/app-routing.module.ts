@@ -11,6 +11,8 @@ import { FormularioSalidaComponent } from './formulario-salida/formulario-salida
 import { SigninComponent } from './signin/signin/signin.component';
 import { LoginComponent } from './login/login/login.component';
 import { BarcosComponent } from './barcos/barcos/barcos.component';
+import { RegistrobarcoComponent } from './registrobarco/registrobarco/registrobarco.component';
+import { EditarbarcoComponent } from './editarbarco/editarbarco/editarbarco.component';
 
 const routes: Routes = [
   {
@@ -60,7 +62,15 @@ const routes: Routes = [
   {
     path: "zonasocios",
     component: ZonasociosComponent
-  }
+  },
+  {
+    path: "registrobarco",
+    component: RegistrobarcoComponent
+  },
+  {
+    path: "editarbarco",
+    component: EditarbarcoComponent
+  },
 ];
 
 @NgModule({

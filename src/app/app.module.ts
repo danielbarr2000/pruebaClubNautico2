@@ -21,6 +21,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { SigninModule } from './signin/signin.module';
 import { LoginModule } from './login/login.module';
 import { BarcosModule } from './barcos/barcos.module';
+import { RegistrobarcoModule } from './registrobarco/registrobarco.module';
+import { EditarbarcoModule } from './editarbarco/editarbarco.module';
 
 
 
@@ -45,7 +47,9 @@ import { BarcosModule } from './barcos/barcos.module';
     SigninModule,
     LoginModule,
     BarcosModule,
-    ZonasociosModule
+    ZonasociosModule,
+    RegistrobarcoModule,
+    EditarbarcoModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

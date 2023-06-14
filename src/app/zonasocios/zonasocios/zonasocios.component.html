@@ -81,10 +81,10 @@
                         style="width:4.2rem; height:4.2rem; border-radius: 10px;">
                         <i class="pi pi-fw pi-sun text-5xl text-yellow-700"></i>
                     </div>
-                    <h2 class="line-height-1 text-900 text-4xl font-normal">¡Disfruta del mejor deporte!</h2>
-                    <span class="text-700 text-2xl line-height-3 ml-0 md:ml-2" style="max-width:650px;">En Bahía Mar, tendrás acceso
-                    a las mejores pistas para practicar todo tipo de deportes. Nosotros te proporcionaremos todo el material necesario,
-                así que no tienes que preocuparte de nada!</span>
+                    <h2 class="line-height-1 text-900 text-4xl font-normal">¡Conoce las mejores playas!
+                    </h2>
+                    <span class="text-700 text-2xl line-height-3 ml-0 md:ml-2" style="max-width:650px;">En Bahía Mar, podrás disfrutar de las mejores playas
+                    privadas que tenemos reservadas para ti. Podrás nadar en las aguas cristalinas como si estuvieses en el Caribe.</span>
                 </div>
             </div>
 
@@ -95,14 +95,13 @@
                 </div>
 
                 <div class="col-12 lg:col-6 my-auto flex flex-column lg:align-items-end text-center lg:text-right">
-                    <div class="flex align-items-center justify-content-center bg-yellow-200 align-self-center lg:align-self-end"
+                    <div class="flex align-items-center justify-content-center bg-red-400 align-self-center lg:align-self-end"
                         style="width:4.2rem; height:4.2rem; border-radius: 10px;">
-                        <i class="pi pi-fw pi-sun text-5xl text-yellow-700"></i>
+                        <i class="pi pi-fw pi-heart text-5xl text-red-900"></i>
                     </div>
-                    <h2 class="line-height-1 text-900 text-4xl font-normal">¡Disfruta del mejor deporte!</h2>
-                    <span class="text-700 text-2xl line-height-3 ml-0 md:ml-2" style="max-width:650px;">En Bahía Mar, tendrás acceso
-                    a las mejores pistas para practicar todo tipo de deportes. Nosotros te proporcionaremos todo el material necesario,
-                así que no tienes que preocuparte de nada!</span>
+                    <h2 class="line-height-1 text-900 text-4xl font-normal">¡Los mejores cócteles en Bahía Mar!</h2>
+                    <span class="text-700 text-2xl line-height-3 ml-0 md:ml-2" style="max-width:650px;">Tenemos una aplia selección de diferentes cócteles y 
+                    bebidas de todo tipo disponibles para que las puedas consumir en cualquier parte.</span>
                 </div>
             </div>
 
@@ -113,22 +112,27 @@
                 </div>
 
                 <div class="col-12 lg:col-6 my-auto flex flex-column lg:align-items-end text-center lg:text-right">
-                    <div class="flex align-items-center justify-content-center bg-yellow-200 align-self-center lg:align-self-end"
+                    <div class="flex align-items-center justify-content-center bg-green-200 align-self-center lg:align-self-end"
                         style="width:4.2rem; height:4.2rem; border-radius: 10px;">
-                        <i class="pi pi-fw pi-sun text-5xl text-yellow-700"></i>
+                        <i class="pi pi-fw pi-building text-5xl text-green-700"></i>
                     </div>
-                    <h2 class="line-height-1 text-900 text-4xl font-normal">¡Disfruta del mejor deporte!</h2>
-                    <span class="text-700 text-2xl line-height-3 ml-0 md:ml-2" style="max-width:650px;">En Bahía Mar, tendrás acceso
-                    a las mejores pistas para practicar todo tipo de deportes. Nosotros te proporcionaremos todo el material necesario,
-                así que no tienes que preocuparte de nada!</span>
+                    <h2 class="line-height-1 text-900 text-4xl font-normal">¡Los Restaurantes más gourmet!</h2>
+                    <span class="text-700 text-2xl line-height-3 ml-0 md:ml-2" style="max-width:650px;">Contamos con numerosos restaurantes con recintos
+                    espectaculares, y algunos de ellos con estrellas michelín. ¿A qué esperas para comer?</span>
                 </div>
             </div>
         </div>
 
+        <div class="flex justify-content-center">
+            <button pButton pRipple label="¡Hazte socio aquí!" (click)="router.navigate(['/login'])" class="w-50 text-center p-3 text-xl bg-green-300 hover:bg-green-500" style="border: none;"></button>
+        </div>
+
+        
+
         <div class="py-4 px-4 mx-0 mt-8 lg:mx-8">
             <div class="grid justify-content-between">
                 <div class="col-12 md:col-2" style="margin-top:-1.5rem;">
-                    <a (click)="router.navigate(['/pages/landing'], {fragment: 'home'})"
+                    <a (click)="router.navigate(['/'])"
                         class="flex flex-wrap align-items-center justify-content-center md:justify-content-start md:mb-0 mb-3 cursor-pointer">
                         <img src="assets/layout/images/Logo.png" alt="footer sections" width="50" height="50"
                             class="mr-2">

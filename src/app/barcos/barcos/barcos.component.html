@@ -27,7 +27,6 @@
                         </a>
                     </li>
                     <li>
-                        <!-- Hay que crear la parte de contacto -->
                         <a (click)="router.navigate(['/contacto'], {fragment: 'highlights'})" pRipple
                             class="flex m-0 md:ml-5 px-0 py-3 hover:text-blue-500 text-2xl text-900 font-medium line-height-3">
                             <span>Contacto</span>
@@ -49,70 +48,71 @@
             style="background: linear-gradient(0deg, rgba(78, 202, 224, 0.2), rgba(23, 63, 173, 0.2)), radial-gradient(77.36% 256.97% at 77.36% 57.52%, #506CBA 0%, #1c3782 100%); clip-path: ellipse(150% 87% at 93% 13%);">
             <div class="mx-4 md:mx-8 mt-0 md:mt-4">
                 <h1 class="text-6xl font-bold text-white line-height-2">Bienvenido a tu embarcadero personal!</h1>
-                <p class="font-normal text-2xl line-height-3 md:mt-3 text-white">En esta sección podrás gestionar tu flota y matricular tus nuevas adquisiciones.</p>
+                <p class="font-normal text-2xl line-height-3 md:mt-3 text-white">En esta sección podrás gestionar tu
+                    flota y matricular tus nuevas adquisiciones.</p>
                 <button pButton pRipple type="button" (click)="router.navigate(['/registrobarco'])"
-                    class="p-button-rounded text-xl border-none mt-3 bg-blue-500 font-normal line-height-3 px-3 text-white">Matricular un barco</button>
+                    class="p-button-rounded text-xl border-none mt-3 bg-blue-500 font-normal line-height-3 px-3 text-white">Matricular
+                    un barco</button>
             </div><br><br><br><br>
-            <!-- <div class="flex justify-content-center md:justify-content-end">
-                <img src="assets/layout/images/Socios.png" alt="Hero Image" class="w-9 md:w-auto">
-            </div> -->
         </div><br><br>
 
-        <div class="flex justify-content-center">
-            <table *ngIf="articulos" style="margin-bottom: 4rem;">
+        <div class="flex flex-column justify-center text-center">
+            <h3>Tus barcos:</h3>
+            <table *ngIf="articulos">
                 <thead>
-                  <tr>
-                    <th>Matricula</th>
-                    <th>Nombre</th>
-                    <th>Amarre</th>
-                    <th>Cuota</th>
-                    <th>Salida</th>
-                    <th>Editar</th>
-                    <th>Borrar</th>
-                  </tr>
+                    <tr>
+                        <th class="bg-blue-500 text-white text-left py-2 px-4">Matrícula</th>
+                        <th class="bg-blue-500 text-white text-left py-2 px-4">Nombre</th>
+                        <th class="bg-blue-500 text-white text-left py-2 px-4">Amarre</th>
+                        <th class="bg-blue-500 text-white text-left py-2 px-4">Cuota</th>
+                        <th class="bg-blue-500 text-white text-left py-2 px-4">Salida</th>
+                        <th class="bg-blue-500 text-white text-left py-2 px-4">Editar</th>
+                        <th class="bg-blue-500 text-white text-left py-2 px-4">Borrar</th>
+                    </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let articulo of articulos">
-                    <td>{{articulo.matricula}}</td>
-                    <td>{{articulo.nombre}}</td>
-                    <td>{{articulo.n_amarre}}</td>
-                    <td>{{articulo.cuota}}€</td>
-                    <td><button class="btn btn-primary">Registrar</button></td>
-                    <td><button class="btn btn-success" (click)="router.navigate(['/editarbarco', { matricula: articulo.matricula }])">Editar</button></td>
-                    <td><button class="btn btn-danger" (click)="borrar(articulo.matricula)">Borrar</button></td>
-                  </tr>
+                    <tr *ngFor="let articulo of articulos">
+                        <td class="border py-2 px-4">{{articulo.matricula}}</td>
+                        <td class="border py-2 px-4">{{articulo.nombre}}</td>
+                        <td class="border py-2 px-4">{{articulo.n_amarre}}</td>
+                        <td class="border py-2 px-4">{{articulo.cuota}}€</td>
+                        <td class="border py-2 px-4"><button class="btn btn-primary">Registrar</button></td>
+                        <td class="border py-2 px-4"><button class="btn btn-success"
+                                (click)="router.navigate(['/editarbarco', { matricula: articulo.matricula }])">Editar</button>
+                        </td>
+                        <td class="border py-2 px-4"><button class="btn btn-danger"
+                                (click)="borrar(articulo.matricula)">Borrar</button></td>
+                    </tr>
                 </tbody>
-              </table>
-
-              <table *ngIf="articulos">
-                <thead>
-                  <tr>
-                    <th>Matricula</th>
-                    <th>Nombre</th>
-                    <th>Amarre</th>
-                    <th>Cuota</th>
-                    <!-- <th>Salida</th>
-                    <th>Editar</th> -->
-                    <th>Borrar</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let articulo of articulos">
-                    <td>{{articulo.matricula}}</td>
-                    <td>{{articulo.nombre}}</td>
-                    <td>{{articulo.n_amarre}}</td>
-                    <td>{{articulo.cuota}}€</td>
-                    <!-- <td><button class="btn btn-primary">Registrar</button></td>
-                    <td><button class="btn btn-success" (click)="router.navigate(['/editarbarco'])">Editar</button></td> -->
-                    <td><button class="btn btn-danger" (click)="borrar(articulo.matricula)">Borrar</button></td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <div *ngIf="!articulos">
-                <h3>Ya va siendo hora de registrar un barco y comenzar a navegar!</h3>
-              </div>
+            </table>
         </div>
+
+        <div class="flex flex-column justify-center text-center">
+            <h3 class="text-center">Las salidas que han realizado tus barcos:</h3>
+            <table *ngIf="articulos" class="border-collapse w-full">
+                <thead>
+                    <tr>
+                        <th class="bg-blue-500 text-white text-left py-2 px-4">Matrícula</th>
+                        <th class="bg-blue-500 text-white text-left py-2 px-4">Nombre</th>
+                        <th class="bg-blue-500 text-white text-left py-2 px-4">Amarre</th>
+                        <th class="bg-blue-500 text-white text-left py-2 px-4">Cuota</th>
+                        <th class="bg-blue-500 text-white text-left py-2 px-4">Borrar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let articulo of articulos">
+                        <td class="border py-2 px-4">{{articulo.matricula}}</td>
+                        <td class="border py-2 px-4">{{articulo.nombre}}</td>
+                        <td class="border py-2 px-4">{{articulo.n_amarre}}</td>
+                        <td class="border py-2 px-4">{{articulo.cuota}}€</td>
+                        <td class="border py-2 px-4"><button class="btn btn btn-danger"
+                                (click)="borrar(articulo.matricula)">Borrar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
 
         <div class="py-4 px-4 mx-0 mt-8 lg:mx-8">
             <div class="grid justify-content-between">
@@ -145,16 +145,21 @@
 
                         <div class="col-12 md:col-3 mt-4 md:mt-0">
                             <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Redes Sociales</h4>
-                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700"><i class="pi pi-fw pi-discord text-4xl text-purple-700"></i>Discord</a>
-                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700"><i class="pi pi-fw pi-twitter text-4xl text-blue-400"></i>Twitter</a>
-                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700"><i class="pi pi-fw pi-facebook text-4xl text-blue-600"></i>Facebook</a>
-                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700"><i class="pi pi-fw pi-instagram text-4xl text-pink-400"></i>Instagram</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700"><i
+                                    class="pi pi-fw pi-discord text-4xl text-purple-700"></i>Discord</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700"><i
+                                    class="pi pi-fw pi-twitter text-4xl text-blue-400"></i>Twitter</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700"><i
+                                    class="pi pi-fw pi-facebook text-4xl text-blue-600"></i>Facebook</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700"><i
+                                    class="pi pi-fw pi-instagram text-4xl text-pink-400"></i>Instagram</a>
                         </div>
 
                         <div class="col-12 md:col-3 mt-4 md:mt-0">
                             <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Legal</h4>
                             <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Política de Empresa</a>
-                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Política de Privacidad</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Política de
+                                Privacidad</a>
                             <a class="line-height-3 text-xl block cursor-pointer text-700">Términos de Uso</a>
                         </div>
                     </div>

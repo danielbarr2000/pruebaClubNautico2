@@ -21,17 +21,23 @@ export class SigninService {
     this.clave = clave;
   }
 
-  // Prueba 1
+  //Metodo para comprobar que un usuario existe. Si devuelve true llama a getUsuario(), si no lanza un alert
   compruebaUsuario() {
     this.http.post<any>("http://localhost:8082/socios/auth", { "nombre": this.nombre, "clave": this.clave }).subscribe(data => {
       if (data == true) {
-        localStorage.setItem('nombre', this.nombre);
-        setTimeout(() => {
-          this.router.navigate(['/']);
-        }, 1000);
+        this.getUsuario(this.nombre);
       } else {
         alert('Inicio de sesión incorrecto');
       }
+    });
+  }
+
+  // Este metodo recibe un nombre de usuario comprobado y guarda su nombre e id en el localstorage. Luego te manda a la pagina principal
+  getUsuario(nombre:string){
+    this.http.get<any>("http://localhost:8082/socios/get/nombre/"+ nombre).subscribe(data => {
+      localStorage.setItem('nombre', data.nombre);
+      localStorage.setItem('id', data.idSocio);
+      this.router.navigate(['/']);
     });
   }
 }

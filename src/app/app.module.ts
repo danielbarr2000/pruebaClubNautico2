@@ -22,6 +22,7 @@ import { SigninModule } from './signin/signin.module';
 import { LoginModule } from './login/login.module';
 import { BarcosModule } from './barcos/barcos.module';
 import { RegistrobarcoModule } from './registrobarco/registrobarco.module';
+import { EditarbarcoModule } from './editarbarco/editarbarco.module';
 
 
 
@@ -48,6 +49,7 @@ import { RegistrobarcoModule } from './registrobarco/registrobarco.module';
     BarcosModule,
     ZonasociosModule,
     RegistrobarcoModule,
+    EditarbarcoModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

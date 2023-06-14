@@ -42,11 +42,9 @@ export class BarcosComponent {
 
   borrar(id: String) {
     this.barcosService.borrar(id).subscribe();
-    console.log("Borrado socio: " + id);
 
     setTimeout(() => {
-      console.log('sleep');
-      this.router.navigate(['barcos']);
+      location.reload();
     }, 1000);
   }
 }

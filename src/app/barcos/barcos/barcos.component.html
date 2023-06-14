@@ -59,7 +59,7 @@
         </div><br><br>
 
         <div class="py-4 px-4 lg:px-8 mt-5 mx-0 lg:mx-8">
-            <table>
+            <table *ngIf="articulos">
                 <thead>
                   <tr>
                     <th>Matricula</th>
@@ -77,13 +77,16 @@
                     <td>{{articulo.nombre}}</td>
                     <td>{{articulo.n_amarre}}</td>
                     <td>{{articulo.cuota}}€</td>
-                    <td><button class="btn btn-primary"><a class="link"
-                          [routerLink]="['/formsalida',articulo.matricula]">Registrar</a></button></td>
-                    <td><button class="btn btn-success"><a class="link">Editar</a></button></td>
-                    <td><button class="btn btn-danger" (click)="borrar(articulo.matricula)"><a class="link">Borrar</a></button></td>
+                    <td><button class="btn btn-primary">Registrar</button></td>
+                    <td><button class="btn btn-success" (click)="router.navigate(['/editarbarco'])">Editar</button></td>
+                    <td><button class="btn btn-danger" (click)="borrar(articulo.matricula)">Borrar</button></td>
                   </tr>
                 </tbody>
               </table>
+
+              <div *ngIf="!articulos">
+                <h3>Ya va siendo hora de registrar un barco y comenzar a navegar!</h3>
+              </div>
         </div>
 
         <div class="py-4 px-4 mx-0 mt-8 lg:mx-8">

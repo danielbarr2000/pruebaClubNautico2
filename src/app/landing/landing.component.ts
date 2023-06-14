@@ -8,6 +8,12 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
 })
 export class LandingComponent implements OnInit {
 
+    visible!: boolean;
+
+    showDialog() {
+        this.visible = true;
+    }
+
     nombre!:any;
     id!:any;
 

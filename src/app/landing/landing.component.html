@@ -59,8 +59,27 @@
                         Bahía Mar</span>¡Tu club de vacaciones favorito!</h1>
                 <p class="font-normal text-2xl line-height-3 md:mt-3 text-gray-700">En Bahía Mar, podrás disfrutar de
                     las mejores experiencias a la hora de viajar en barco.</p>
-                <button pButton pRipple type="button" label="Descubre las experiencias"
-                    class="p-button-rounded text-xl border-none mt-3 bg-blue-500 font-normal line-height-3 px-3 text-white"></button>
+                <!-- <button pButton pRipple type="button" label="Descubre las experiencias"
+                    class="p-button-rounded text-xl border-none mt-3 bg-blue-500 font-normal line-height-3 px-3 text-white"></button> -->
+                        <p-button (click)="showDialog()" icon="pi pi-external-link" label="Descubre el club"></p-button>
+                        <p-dialog header="Header" [(visible)]="visible" [style]="{ width: '50vw' }">
+                            <ng-template pTemplate="header">
+                                <span class="text-xl font-bold">Ayuda Online</span>
+                            </ng-template>
+                            <p>
+                                ¡Bienvenido al Club Náutico Bahía Mar! Si eres un apasionado del mar y los barcos, este es el lugar perfecto para ti. Como socio de nuestro club, tendrás acceso exclusivo a una amplia gama de servicios y beneficios diseñados para satisfacer tus necesidades náuticas. <br><br>
+
+                                Nuestro club te ofrece la oportunidad de registrar tus barcos de manera sencilla y segura. Ya sea que tengas una pequeña embarcación o una majestuosa embarcación a vela, nuestro equipo de expertos estará encantado de asistirte en todo el proceso de registro. Además, tendrás acceso a nuestras modernas instalaciones y servicios, incluyendo amarres de alta calidad, estaciones de servicio, áreas de almacenamiento y personal calificado para el mantenimiento de tu embarcación. <br><br>
+                                
+                                Convertirte en socio del Club Náutico Bahía Mar también te brinda la oportunidad de formar parte de una comunidad de entusiastas del mar. Podrás participar en emocionantes eventos náuticos, regatas y encuentros sociales donde podrás compartir experiencias y conocimientos con otros miembros apasionados por la navegación. Nuestro club también ofrece clases y cursos de navegación para aquellos que deseen perfeccionar sus habilidades o iniciarse en este maravilloso mundo. <br><br>
+                                
+                                No pierdas la oportunidad de unirte a nuestra familia náutica. ¡Únete hoy mismo y descubre todo lo que el Club Náutico Bahía Mar tiene para ofrecerte!
+                            </p>
+                            <ng-template pTemplate="footer">
+                                <p-button icon="pi pi-check" (click)="visible = false" label="Ok" styleClass="p-button-text"></p-button>
+                            </ng-template>
+                        </p-dialog>
+                    
             </div>
             <div class="flex justify-content-center md:justify-content-end">
                 <img src="assets/demo/images/landing/Boat.png" alt="Hero Image" class="w-9 md:w-8">

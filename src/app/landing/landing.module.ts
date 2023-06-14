@@ -8,6 +8,7 @@ import { ChartModule } from 'primeng/chart';
 import { PanelModule } from 'primeng/panel';
 import { ButtonModule } from 'primeng/button';
 import { GalleriaModule } from 'primeng/galleria';
+import { DialogModule } from 'primeng/dialog';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { GalleriaModule } from 'primeng/galleria';
         PanelModule,
         ButtonModule,
         GalleriaModule,
+        DialogModule
     ],
     declarations: [LandingComponent]
 })

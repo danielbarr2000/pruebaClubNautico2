@@ -76,7 +76,9 @@
                         <td class="border py-2 px-4">{{articulo.nombre}}</td>
                         <td class="border py-2 px-4">{{articulo.n_amarre}}</td>
                         <td class="border py-2 px-4">{{articulo.cuota}}€</td>
-                        <td class="border py-2 px-4"><button class="btn btn-primary">Registrar</button></td>
+                        <td class="border py-2 px-4"><button class="btn btn-primary"
+                                (click)="router.navigate(['/registrosalida', { matricula: articulo.matricula }])">Registrar</button>
+                        </td>
                         <td class="border py-2 px-4"><button class="btn btn-success"
                                 (click)="router.navigate(['/editarbarco', { matricula: articulo.matricula }])">Editar</button>
                         </td>
@@ -92,21 +94,20 @@
             <table *ngIf="articulos" class="border-collapse w-full">
                 <thead>
                     <tr>
-                        <th class="bg-blue-500 text-white text-left py-2 px-4">Matrícula</th>
-                        <th class="bg-blue-500 text-white text-left py-2 px-4">Nombre</th>
-                        <th class="bg-blue-500 text-white text-left py-2 px-4">Amarre</th>
-                        <th class="bg-blue-500 text-white text-left py-2 px-4">Cuota</th>
+                        <th class="bg-blue-500 text-white text-left py-2 px-4">Fecha</th>
+                        <th class="bg-blue-500 text-white text-left py-2 px-4">Destino</th>
+                        <th class="bg-blue-500 text-white text-left py-2 px-4">Patron</th>
+                        <th class="bg-blue-500 text-white text-left py-2 px-4">Matricula</th>
                         <th class="bg-blue-500 text-white text-left py-2 px-4">Borrar</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let articulo of articulos">
-                        <td class="border py-2 px-4">{{articulo.matricula}}</td>
-                        <td class="border py-2 px-4">{{articulo.nombre}}</td>
-                        <td class="border py-2 px-4">{{articulo.n_amarre}}</td>
-                        <td class="border py-2 px-4">{{articulo.cuota}}€</td>
-                        <td class="border py-2 px-4"><button class="btn btn btn-danger"
-                                (click)="borrar(articulo.matricula)">Borrar</button></td>
+                    <tr *ngFor="let salida of salidas">
+                        <td class="border py-2 px-4">{{salida.fecha}}</td>
+                        <td class="border py-2 px-4">{{salida.destino}}</td>
+                        <td class="border py-2 px-4">{{salida.nombre_patron}}</td>
+                        <td class="border py-2 px-4">{{salida.matricula_barco}}</td>
+                        <td class="border py-2 px-4"><button class="btn btn btn-danger" (click)="borrar(salida.id_salida)">Borrar</button></td>
                     </tr>
                 </tbody>
             </table>

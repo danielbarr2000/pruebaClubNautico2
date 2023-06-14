@@ -10,7 +10,9 @@ import { BarcosService } from './service/barcos.service';
 export class BarcosComponent {
 
   nombre!: any;
-  articulos: any;
+  articulos!: any;
+  salidas!: any;
+
   constructor(private barcosService: BarcosService, public router: Router) { }
 
   ngOnInit(): void {
@@ -19,19 +21,26 @@ export class BarcosComponent {
     this.barcosService.acceder().subscribe({
       next: (resp) => {
         this.articulos = resp;
-        console.log(this.articulos);
 
       }, error: (err) => {
         console.log(err);
-
       }
     })
+
+    this.barcosService.getSalidas().subscribe({
+      next: (resp) => {
+        this.salidas = resp;
+
+      }, error: (err) => {
+        console.log(err);
+      }
+    })
+
   }
 
   getUsuario() {
     if (localStorage.getItem('nombre') != '') {
       this.nombre = localStorage.getItem('nombre') as string
-      console.log(this.nombre);
     }
   }
 
@@ -40,9 +49,8 @@ export class BarcosComponent {
     this.router.navigate(['/']);
   }
 
-  borrar(id: String) {
-    this.barcosService.borrar(id).subscribe();
-
+  borrar(id: string) {
+    this.barcosService.borrarSalida(id).subscribe();
     setTimeout(() => {
       location.reload();
     }, 1000);

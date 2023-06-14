@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login/login.component';
 import { BarcosComponent } from './barcos/barcos/barcos.component';
 import { RegistrobarcoComponent } from './registrobarco/registrobarco/registrobarco.component';
 import { EditarbarcoComponent } from './editarbarco/editarbarco/editarbarco.component';
+import { RegistrosalidaComponent } from './registrosalida/registrosalida/registrosalida.component';
 
 const routes: Routes = [
   {
@@ -67,6 +68,10 @@ const routes: Routes = [
   {
     path: "registrobarco",
     component: RegistrobarcoComponent
+  },
+  {
+    path: "registrosalida",
+    component: RegistrosalidaComponent
   },
   {
     path: "editarbarco",

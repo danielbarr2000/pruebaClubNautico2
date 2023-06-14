@@ -1,0 +1,45 @@
+<div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden" id="background">
+    <div class="flex flex-column align-items-center justify-content-center">
+        <div style="border-radius:56px; padding:0.3rem; background: linear-gradient(180deg, var(--primary-color) 10%, rgba(33, 150, 243, 0) 30%);">
+            <div class="w-full surface-card py-8 px-5 sm:px-8" style="border-radius:53px">
+                <div class="text-center mb-5">
+                    <img src="assets/layout/images/Logo.png" alt="Image" height="50" class="mb-3">
+                </div>
+                <p-toast key="tst"></p-toast>
+                <div>
+                    <div class="pb-5">
+                        <span class="p-float-label text-xl">
+                            <input type="date" id="fecha" [(ngModel)]="fecha" pInputText class="w-full md:w-30rem" style="padding:1rem" required>
+                            <label for="fecha"></label>
+                        </span>
+                    </div>
+
+                    <div class="pb-5">
+                        <span class="p-float-label text-xl">
+                            <input type="text" id="destino" [(ngModel)]="destino" pInputText class="w-full md:w-30rem" style="padding:1rem" required>
+                            <label for="nombre">Destino del viaje</label>
+                        </span>
+                    </div>
+
+                    <div class="pb-5">
+                        <span class="p-float-label text-xl">
+                            <input type="text" id="patron" [(ngModel)]="patron" pInputText class="w-full md:w-30rem" style="padding:1rem" required>
+                            <label for="nAmarre">Patron del barco</label>
+                        </span>
+                    </div>
+
+                    <div class="pb-5">
+                        <span class="p-float-label text-xl">
+                            <input type="text" id="matricula" [(ngModel)]="matricula" pInputText class="w-full md:w-30rem" style="padding:1rem" readonly>
+                            <label for="matricula">Matricula del barco</label>
+                        </span>
+                    </div>
+
+                    <button pButton pRipple label="Guardar salida" class="w-full p-3 text-xl" (click)="enviar()"></button><br><br>
+
+                    <button pButton pRipple label="Volver" (click)="router.navigate(['/barcos'])" class="w-full p-3 text-xl bg-bluegray-200" style="border: none;"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

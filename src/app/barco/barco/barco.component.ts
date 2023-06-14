@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BarcoService } from './service/barco.service';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-barco',
@@ -9,10 +10,18 @@ import { Router } from '@angular/router';
 })
 export class BarcoComponent implements OnInit {
 
-  articulos: any;
-  constructor(private barcoService: BarcoService, private router: Router) { }
+  articulos!: any;
+  matricula!:any;
+
+  constructor(private barcoService: BarcoService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.matricula = params.get('matricula');
+      console.log(params.get('matricula'))
+    });
+    
+  
 
     this.barcoService.acceder().subscribe({
       next: (resp) => {

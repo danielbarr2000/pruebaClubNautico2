@@ -56,7 +56,7 @@
             </div><br><br><br><br>
         </div><br><br>
 
-        <div class="flex flex-column justify-center text-center">
+        <div class="flex flex-column justify-center text-center" *ngIf="articulos; else noBarcos">
             <h3>Tus barcos:</h3>
             <table *ngIf="articulos">
                 <thead>
@@ -83,13 +83,19 @@
                                 (click)="router.navigate(['/editarbarco', { matricula: articulo.matricula }])">Editar</button>
                         </td>
                         <td class="border py-2 px-4"><button class="btn btn-danger"
-                                (click)="borrar(articulo.matricula)">Borrar</button></td>
+                                (click)="borrarBarco(articulo.matricula)">Borrar</button></td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="flex flex-column justify-center text-center">
+        <ng-template #noBarcos>
+            <div>
+                <h3 style="text-align: center;">Matricula un barco y comienza a navegar!!!</h3>
+            </div>
+        </ng-template>
+
+        <div class="flex flex-column justify-center text-center" *ngIf="salidas != ''">
             <h3 class="text-center">Las salidas que han realizado tus barcos:</h3>
             <table *ngIf="articulos" class="border-collapse w-full">
                 <thead>
@@ -107,14 +113,12 @@
                         <td class="border py-2 px-4">{{salida.destino}}</td>
                         <td class="border py-2 px-4">{{salida.nombre_patron}}</td>
                         <td class="border py-2 px-4">{{salida.matricula_barco}}</td>
-                        <td class="border py-2 px-4"><button class="btn btn btn-danger" (click)="borrar(salida.id_salida)">Borrar</button></td>
+                        <td class="border py-2 px-4"><button class="btn btn btn-danger" (click)="borrarSalida(salida.id_salida)">Borrar</button></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-
-
-
+        
         <div class="py-4 px-4 mx-0 mt-8 lg:mx-8">
             <div class="grid justify-content-between">
                 <div class="col-12 md:col-2" style="margin-top:-1.5rem;">

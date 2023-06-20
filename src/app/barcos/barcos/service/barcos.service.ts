@@ -15,7 +15,7 @@ export class BarcosService {
     return this.http.get(this.baseUrl+"barcos/get/user/"+localStorage.getItem('id'));
   }
 
-  borrar(id:string){
+  borrarBarco(id:string){
     return this.http.delete(this.baseUrl+"barcos/delete/"+id)
   }
 
@@ -23,7 +23,7 @@ export class BarcosService {
     return this.http.get(this.baseUrl+"salidas/get/usuario/"+localStorage.getItem("id"));
   }
 
-  borrarSalida(id:string){
+  borrarSalida(id:number){
     return this.http.delete(this.baseUrl+"salidas/delete/"+id)
   }
 }

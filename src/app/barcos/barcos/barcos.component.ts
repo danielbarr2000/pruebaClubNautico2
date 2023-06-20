@@ -49,7 +49,14 @@ export class BarcosComponent {
     this.router.navigate(['/']);
   }
 
-  borrar(id: string) {
+  borrarBarco(id: string) {
+    this.barcosService.borrarBarco(id).subscribe();
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
+  }
+
+  borrarSalida(id: number) {
     this.barcosService.borrarSalida(id).subscribe();
     setTimeout(() => {
       location.reload();

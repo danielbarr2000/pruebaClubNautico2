@@ -44,7 +44,6 @@ export class EditarbarcoComponent implements OnInit {
     this.editarbarcoService.enviarDatos(this.barco.matricula);
 
     setTimeout(() => {
-      console.log('sleep');
       this.router.navigate(['/barcos']);
     }, 1000);
   }

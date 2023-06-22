@@ -58,67 +58,84 @@
 
         <div class="flex flex-column justify-center text-center" *ngIf="articulos; else noBarcos">
             <h3>Tus barcos:</h3>
-            <table *ngIf="articulos">
-                <thead>
-                    <tr>
-                        <th class="bg-blue-500 text-white text-left py-2 px-4">Matrícula</th>
-                        <th class="bg-blue-500 text-white text-left py-2 px-4">Nombre</th>
-                        <th class="bg-blue-500 text-white text-left py-2 px-4">Amarre</th>
-                        <th class="bg-blue-500 text-white text-left py-2 px-4">Cuota</th>
-                        <th class="bg-blue-500 text-white text-left py-2 px-4">Salida</th>
-                        <th class="bg-blue-500 text-white text-left py-2 px-4">Editar</th>
-                        <th class="bg-blue-500 text-white text-left py-2 px-4">Borrar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let articulo of articulos">
-                        <td class="border py-2 px-4">{{articulo.matricula}}</td>
-                        <td class="border py-2 px-4">{{articulo.nombre}}</td>
-                        <td class="border py-2 px-4">{{articulo.n_amarre}}</td>
-                        <td class="border py-2 px-4">{{articulo.cuota}}€</td>
-                        <td class="border py-2 px-4"><button class="btn btn-primary"
-                                (click)="router.navigate(['/registrosalida', { matricula: articulo.matricula }])">Registrar</button>
-                        </td>
-                        <td class="border py-2 px-4"><button class="btn btn-success"
-                                (click)="router.navigate(['/editarbarco', { matricula: articulo.matricula }])">Editar</button>
-                        </td>
-                        <td class="border py-2 px-4"><button class="btn btn-danger"
-                                (click)="borrarBarco(articulo.matricula)">Borrar</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
 
-        <ng-template #noBarcos>
-            <div>
-                <h3 style="text-align: center;">Matricula un barco y comienza a navegar!!!</h3>
+            <div class="flex justify-content-center flex-row">
+                <div class="card justify-content-center">
+                    <p-table [value]="articulos" [tableStyle]="{'min-width': '50rem'}">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th class="bg-blue-500 text-white text-left py-2 px-4">Matrícula</th>
+                                <th class="bg-blue-500 text-white text-left py-2 px-4">Nombre</th>
+                                <th class="bg-blue-500 text-white text-left py-2 px-4">Amarre</th>
+                                <th class="bg-blue-500 text-white text-left py-2 px-4">Cuota</th>
+                                <th class="bg-blue-500 text-white text-left py-2 px-4">Salida</th>
+                                <th class="bg-blue-500 text-white text-left py-2 px-4">Editar</th>
+                                <th class="bg-blue-500 text-white text-left py-2 px-4">Borrar</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-articulo>
+                            <tr>
+                                <td class="border py-2 px-4">{{articulo.matricula}}</td>
+                                <td class="border py-2 px-4">{{articulo.nombre}}</td>
+                                <td class="border py-2 px-4">{{articulo.n_amarre}}</td>
+                                <td class="border py-2 px-4">{{articulo.cuota}}€</td>
+                                <td class="border py-2 px-4"><button class="btn btn-primary"
+                                        (click)="router.navigate(['/registrosalida', { matricula: articulo.matricula }])">Registrar</button>
+                                </td>
+                                <td class="border py-2 px-4"><button class="btn btn-success"
+                                        (click)="router.navigate(['/editarbarco', { matricula: articulo.matricula }])">Editar</button>
+                                </td>
+                                <td class="border py-2 px-4"><button class="btn btn-danger"
+                                        (click)="borrarBarco(articulo.matricula)">Borrar</button></td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
             </div>
-        </ng-template>
 
-        <div class="flex flex-column justify-center text-center" *ngIf="salidas != ''">
-            <h3 class="text-center">Las salidas que han realizado tus barcos:</h3>
-            <table *ngIf="articulos" class="border-collapse w-full">
-                <thead>
-                    <tr>
-                        <th class="bg-blue-500 text-white text-left py-2 px-4">Fecha</th>
-                        <th class="bg-blue-500 text-white text-left py-2 px-4">Destino</th>
-                        <th class="bg-blue-500 text-white text-left py-2 px-4">Patron</th>
-                        <th class="bg-blue-500 text-white text-left py-2 px-4">Matricula</th>
-                        <th class="bg-blue-500 text-white text-left py-2 px-4">Borrar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let salida of salidas">
-                        <td class="border py-2 px-4">{{salida.fecha}}</td>
-                        <td class="border py-2 px-4">{{salida.destino}}</td>
-                        <td class="border py-2 px-4">{{salida.nombre_patron}}</td>
-                        <td class="border py-2 px-4">{{salida.matricula_barco}}</td>
-                        <td class="border py-2 px-4"><button class="btn btn btn-danger" (click)="borrarSalida(salida.id_salida)">Borrar</button></td>
-                    </tr>
-                </tbody>
-            </table>
+            
         </div>
-        
+
+    </div>
+
+    <ng-template #noBarcos>
+        <div>
+            <h3 style="text-align: center;">Matricula un barco y comienza a navegar!!!</h3>
+        </div>
+    </ng-template>
+
+    <br><br>
+    <div class="flex flex-column justify-center text-center" *ngIf="salidas != ''">
+        <h3 class="text-center">Las salidas que han realizado tus barcos:</h3>
+        <br>
+        <div class="flex justify-content-center flex-row">
+            <div class="card justify-content-center">
+                <p-table [value]="salidas" [tableStyle]="{'min-width': '50rem'}">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th class="bg-blue-500 text-white text-left py-2 px-4">Fecha</th>
+                            <th class="bg-blue-500 text-white text-left py-2 px-4">Destino</th>
+                            <th class="bg-blue-500 text-white text-left py-2 px-4">Patron</th>
+                            <th class="bg-blue-500 text-white text-left py-2 px-4">Matricula</th>
+                            <th class="bg-blue-500 text-white text-left py-2 px-4">Borrar</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-salida>
+                        <tr>
+                            <td class="border py-2 px-4">{{salida.fecha}}</td>
+                            <td class="border py-2 px-4">{{salida.destino}}</td>
+                            <td class="border py-2 px-4">{{salida.nombre_patron}}</td>
+                            <td class="border py-2 px-4">{{salida.matricula_barco}}</td>
+                            <td class="border py-2 px-4"><button class="btn btn btn-danger"
+                                    (click)="borrarSalida(salida.id_salida)">Borrar</button></td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+
+
         <div class="py-4 px-4 mx-0 mt-8 lg:mx-8">
             <div class="grid justify-content-between">
                 <div class="col-12 md:col-2" style="margin-top:-1.5rem;">
@@ -172,4 +189,3 @@
             </div>
         </div>
     </div>
-</div>

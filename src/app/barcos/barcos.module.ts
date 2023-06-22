@@ -5,6 +5,7 @@ import { BarcosComponent } from './barcos/barcos.component';
 import { ButtonModule } from 'primeng/button';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '../app-routing.module';
+import { TableModule } from 'primeng/table';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AppRoutingModule } from '../app-routing.module';
     CommonModule,
     AppRoutingModule,
     HttpClientModule,
-    ButtonModule
+    ButtonModule,
+    TableModule
   ]
 })
 export class BarcosModule { }

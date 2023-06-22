@@ -13,7 +13,7 @@ export class RegistrosalidaService {
   patron!: string;
   matricula!: string;
 
-  baseUrl: string=environment.baseUrl;
+  baseUrl: string="http://localhost:8082/";
 
   constructor(private http: HttpClient, public router: Router) { }
 

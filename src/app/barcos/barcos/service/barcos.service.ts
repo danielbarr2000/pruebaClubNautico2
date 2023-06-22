@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class BarcosService {
 
-  baseUrl: string=environment.baseUrl;
+  baseUrl: string="http://localhost:8082/";
 
   constructor(private http: HttpClient) { }
 

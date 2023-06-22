@@ -18,6 +18,7 @@ import { BarcosModule } from './barcos/barcos.module';
 import { RegistrobarcoModule } from './registrobarco/registrobarco.module';
 import { EditarbarcoModule } from './editarbarco/editarbarco.module';
 import { RegistrosalidaModule } from './registrosalida/registrosalida.module';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -41,7 +42,7 @@ import { RegistrosalidaModule } from './registrosalida/registrosalida.module';
     ContactoModule,
     RegistrosalidaModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

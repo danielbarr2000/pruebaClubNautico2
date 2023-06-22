@@ -13,7 +13,7 @@ export class LoginService {
   clave: string = "";
   postId: any;
 
-  baseUrl: string=environment.baseUrl;
+  baseUrl: string="http://localhost:8082/";
 
   constructor(private http: HttpClient) { }
 
